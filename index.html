@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Catalago</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="#" rel="stylesheet">
+  
+<!--SCRIPT CREADOS DESDE http://flipr.ivank.net OPEN SOURCE -->
+
+        <script type="text/javascript" src="js/ivank.js"  ></script>
+        <script type="text/javascript" src="js/flipr.js"></script>
+
+<!-- FUNCION PARA EL TAMAÑO Y LAS IMAGENES-->      
+        <script type="text/javascript">
+          function Go()
+          {
+               var width  = 480;
+               var height = 640;
+               var pages  = [ "img/1.jpg", "img/2.jpg", "img/1.jpg", "img/2.jpg" ];
+               var book = new Book("c", width, height, pages);
+          }
+        </script>
+</head>
+
+
+<!--CUERPO DE LA PAGINA -->
+<body onload="Go();">   
+   <div>
+        <h1><label align="center">Catálago</label>                
+            <label align="center" style="color:#3ca2d7;">Online</label>
+        </h1>  
+   </div>
+
+<!-- Llama a la funcion creada en el script-->
+    <div >
+        <canvas id="c"></canvas>
+        <iframe src="index.html" width="900" height="500"></iframe>
+    </div>
+
+
+
+    </body>
+</html>
