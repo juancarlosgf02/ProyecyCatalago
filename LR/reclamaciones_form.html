@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+    </head>
+    <body>
+    
+
+<div class="reclamaciones">
+    <form id="reclamaciones" action="<?php echo Mage::getUrl('reclamaciones/contact/submit'); ?>" method="POST">
+       
+    	<input type="hidden" name="subject" value="Libro de Reclamaciones Nº <?php echo str_pad($result, 6, "0", STR_PAD_LEFT); ?>
+        
+    	<div class="page-title">
+       
+  <!-- -->   
+        <div > 
+            
+            <H1 >
+                <img src="skin/frontend/ultimo/default/images/reclamaciones/librodereclamaciones3.png"  height="45px"/>
+                 <label align="left">Libro de</label>                
+                 <label align="left" style="color:#3ca2d7;">Reclamaciones</label>
+            </H1>  
+        </div>
+<!-- -->
+
+
+        </div>
+        
+        <p class="parrafo">Conforme a lo establecido en el código de la Protección y Defensa del consumidor, contamos con un libro de reclamaciones a tu disposición.</p>
+        <p class="parrafo">Ingresa una queja o reclamo aquí. Recuerda que los campos con un <span class="obligatorio"> (*)</span> son obligatorios</p>
+        
+        <div class="encabezado">
+            <div class="reclamacion">Hoja de Reclamación Nº <?php echo str_pad($result, 6, "0", STR_PAD_LEFT); ?></div>
+            <div><span class="fechatxt">Fecha de reclamo o queja:</span> <?php echo '<span class="fecha">'. $hoy .'</span>';?></div>
+        </div>
+        
+        <div class="identificacion">
+        	<h4>1. Identificación del consumidor reclamante</h4>
+            <ul class="form-list">
+                <li class="fields">
+                    <div class="field">
+                        <label for="name" class="required"><em>*</em><?php echo $this->__('Nombres y Apellidos') ?></label>
+                        <div class="input-box">
+                            <input type="text" id="name_field" name="name" value="<?php echo $this->htmlEscape($data['name']) ?>" class="input-text required-entry"/>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="email" class="required"><em>*</em><?php echo $this->__('Email') ?></label>
+                        <div class="input-box">
+                            <input type="text" id="email_field" name="email" value="<?php echo $this->htmlEscape($data['email']) ?>" class="input-text required-entry validate-email"/>
+                        </div>
+                    </div>
+                </li>
+                <li class="fields">
+                    <div class="field">
+                        <label for="phone" class="required"><em>*</em><?php echo $this->__('Teléfono') ?></label>
+                        <div class="input-box">
+                            <input type="text" id="phone_field" name="phone" value="<?php echo $this->htmlEscape($data['phone']) ?>" class="input-text required-entry"/>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="distrito" class="required"><em>*</em><?php echo $this->__('Distrito') ?></label>
+                        <div class="input-box">
+                            <input type="text" id="distrito_field" name="distrito" value="<?php echo $this->htmlEscape($data['distrito']) ?>" class="input-text required-entry"/>
+                        </div>
+                    </div>
+                </li>
+                <li class="wide">
+                    <label for="direccion" class="required"><em>*</em><?php echo $this->__('Dirección') ?></label>
+                    <div class="input-box">
+                        <input type="text" id="direccion_field" name="direccion" value="<?php echo $this->htmlEscape($data['direccion']) ?>" class="input-text required-entry"/>
+                    </div>
+                </li>
+                <li class="fields">
+                    <div class="field">
+                        <label for="documentotipo" class="required"><em>*</em>Doc. de identidad</label>
+                        <div class="input-box">
+                            <span class="fake-select">
+                                <span class="ic ic-down"></span>
+                                <select id="documentotipo_field" name="documentotipo" class="validate-select">
+                                    <option value="" selected="selected" >Selecciona una opción...</option>
+                                    <option value="DNI">D.N.I.</option>
+                                    <option value="CE">C.E.</option>
+                                    <option value="Menor de edad">Menor de edad</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="documentonum" class="required"><em>*</em><?php echo $this->__('Nº de Documento') ?></label>
+                        <div class="input-box">
+                            <input type="text" id="documentonum_field" name="documentonum" value="<?php echo $this->htmlEscape($data['documentonum']) ?>" class="input-text required-entry"/>
+                        </div>
+                    </div>
+                </li>
+                <li class="wide">
+                    <label for="apoderado" class="required"><em>*</em><?php echo $this->__('Padre o Madre (En caso de menores de edad)') ?></label>
+                    <div class="input-box">
+                        <input type="text" id="apoderado_field" name="apoderado" value="<?php echo $this->htmlEscape($data['apoderado']) ?>" class="input-text required-entry"/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="bien">
+        	<h4>2. Identificación del bien contratado</h4>
+            <div class="form-field izq"> 
+                <div class="input-label">
+                    <ul class="tipo-bien">
+                        <li>  
+                            <input type="radio" name="bien" id="bien_producto" value="Producto" checked="checked">
+                            <label for="bien_producto">Producto</label>
+                        </li>
+                        <li> 
+                            <input type="radio" name="bien" id="bien_servicio" value="Servicio">
+                            <label for="bien_servicio">Servicio</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearer"></div>
+            <ul class="form-list">
+                <li class="wide">
+                    <label for="monto" class="required"><em>*</em><?php echo $this->__('Monto') ?></label>
+                    <div class="input-box">
+                        <input type="text" id="monto_field" name="monto" value="<?php echo $this->htmlEscape($data['moto']) ?>" class="input-text required-entry"/>
+                    </div>
+                </li>
+        
+                <li class="wide">
+                    <label for="bienmessage" class="required"><em>*</em><?php echo $this->__('Descripción') ?></label>
+                    <div class="input-box">
+                        <textarea id="bienmessage_field" name="bienmessage" class="required-entry" ><?php echo $this->htmlEscape($data['bienmessage']) ?></textarea>
+                    </div>
+                </li>
+            </ul>  
+        </div>
+        
+        <div class="bien">
+        	<h4>3. Detalle de la reclamación</h4>
+            
+            <div class="form-field izq"> 
+                <div class="input-label">
+                    <ul class="tipo-bien">
+                        <li>  
+                            <input type="radio" name="tiporeclamo" id="tipore_reclamo" value="Reclamo" checked="checked">
+                            <label for="tipore_reclamo">Reclamo (*)</label>
+                        </li>
+                        <li> 
+                            <input type="radio" name="tiporeclamo" id="tipore_queja" value="Queja">
+                            <label for="tipore_queja">Queja (*)</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearer"></div>
+
+            <ul class="form-list">
+                <li class="wide">
+                    <label for="tiporemessage" class="required"><em>*</em><?php echo $this->__('Descripción') ?></label>
+                    <div class="input-box">
+                        <textarea id="tiporemessage_field" name="tiporemessage" class="required-entry" ><?php echo $this->htmlEscape($data['tiporemessage']) ?></textarea>
+                    </div>
+                </li>
+            </ul> 
+        </div>
+        
+        <div class="bien">
+        	<h4>4. Acciones adoptadas por el vendedor</h4>
+
+            <ul class="form-list">
+                <li class="wide">
+                    <label for="accionesmessage" class="required"><em>*</em><?php echo $this->__('Descripción') ?></label>
+                    <div class="input-box">
+                        <textarea id="accionesmessage_field" name="accionesmessage" class="required-entry" ><?php echo $this->htmlEscape($data['accionesmessage']) ?></textarea>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+      
+
+        <div class="button-set">
+            <button class="button form-button" type="submit"><span><span><?php echo $this->__('Enviar reclamación') ?></span></span></button>
+        </div>
+
+
+<!-- -->
+            <br></br>
+        <div>
+            <h6>5. NOTA</h6>
+            <p class="parrafo">Reclamo(*): Disconformidad relacionada a los bienes expendidos o suministrados o a los servicios prestados.</p>
+            <p class="parrafo">Queja(*): Disconformidad que NO se encuentran relacionada a los bienes expendidos o suministrados o a los servicios prestados.</p>
+            <p class="parrafo">El provedor deberá dar respuesta al reclamo en un plazo no mayor de treinta (30) días calendario, pudiendo ampliar el plazo hasta por treinta (30) días más, previa comunicación al consumidor.</p>
+        </div>
+<!-- -->
+
+    </form>
+    <script type="text/javascript">
+    //<![CDATA[
+    var ReclamacionesForm = new VarienForm('reclamaciones', true);
+    //]]>
+    </script>
+</div>
+    <?php } ?>
+
+
+        </body>
+</html>
