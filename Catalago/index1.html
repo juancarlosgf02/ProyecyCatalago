@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Catalago</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">  
+<!--SCRIPT CREADOS DESDE http://flipr.ivank.net OPEN SOURCE -->
+        <script type="text/javascript" src="js/ivank.js"  ></script>
+        <script type="text/javascript" src="js/flipr.js"></script>
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+        <script src='js/jquery.zoom.js'></script>
+	<script>
+		$(document).ready(function(){
+			$('#ex3').zoom({ on:'click' });			 
+		});
+	</script>
+   <script type="text/javascript">
+          function Go(){
+               var width  = 880;
+               var height = 1040;
+               //var pages  = document.getElementById("primeraplana", "tercera", "cuarta", "sexta");
+               var pages  = [ "img/1.jpg", "img/2.jpg", "img/3.jpg", "img/6.jpg" ];
+               var book = new Book("c", width, height, pages);
+          }
+        </script> 
+    </head>
+<body onload="Go();"><canvas id="c"></canvas>
+    <!--    <img scr="img/1.jpg" id="primeraplana"/>
+        <img scr="img/3.jpg" id="tercera"/>
+        <img scr="img/4.jpg" id="cuarta"/>
+        <img scr="img/6.jpg" id="sexta"/> -->
+</body>
+   <!--<script type="text/javascript">
+        cat=document.getElementById("primeraplana", "tercera", "cuarta", "sexta");
+    </script>-->
+</html>
