@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>Catalago</title>
+<!-- CSS -->   
+	<link href="css/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+	<link href="css/style.css" type="text/css" rel="stylesheet" />
+<!--  jQuery -->  
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script> window.jQuery || document.write('<script src="js/jquery-2.1.0.min.js"><\/script>') </script>
+<!-- jQuery UI-->
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script> window.jQuery.ui || document.write('<script src="js/jquery-ui-1.10.4.min.js"><\/script>') </script>
+<!-- Booklet -->
+	<script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="js/jquery.booklet.latest.min.js" type="text/javascript"></script>
+	<script src="js/jquery.zoom.js"></script>
+	<script src="js/zoom.js"></script>
+	
+</head>
+<!-- Cuerpo de la pagina -->
+<body>
+	<div align="center">
+        <h1><label>Catálago</label>                
+            <label style="color:#3ca2d7;">Online</label>
+        </h1>  
+    </div>
+
+	<section id="content ">
+    <div id="custom-menu"></div>
+	<div id="magazine">
+		<div>
+		<span class='zoom' id='ex3'>
+			<img  src="img/1.jpg" width="100%" height=500 />
+		</span>
+		</div>
+		<div title="Puma - Adidas">
+			<span class="zoom" id="ex1">
+				<img src="img/3.jpg" width="100%" height=500/>
+			</span>
+		</div>
+		<div >
+			<span class='zoom' id='ex2'>
+				<img src="img/4.jpg" width="100%" height=500/>
+			</span>
+		</div>
+		<div title="Rebook">
+			<span class='zoom' id='ex3'>
+				<img src="img/2.jpg" width="100%" height=500/>
+			</span>
+		</div>
+		<div>
+			<span class='zoom' id='ex4'>
+				<img src="img/2.jpg" width="100%" height=500/>
+			</span>
+		</div>
+		<div title="Nike - Puma">
+			<span class='zoom' id='ex5'>
+				<img src="img/4.jpg" width="100%" height=500/>
+			</span>
+		</div>
+		<div>
+			<span class='zoom' id='ex6'>
+				<img src="img/5.jpg" width="100%" height=500/>
+			</span>
+		</div>
+		<div>
+			<span class='zoom' id='ex7'>
+				<img src="img/5.jpg" width="100%" height=500/>
+			</span>
+		</div>
+	</div>
+</section>
+<!-- script funcion -->
+<script>
+    //http://builtbywill.com/booklet/ se uso
+	$(function() {
+		$('#magazine').booklet({
+            width:  '800px',
+        	height:	500,
+			arrows: true,
+			closed: true,
+            autoCenter: true,
+            menu: '#custom-menu',
+            pageSelector: true,
+		});
+	});
+</script>
+</body>
+</html>
